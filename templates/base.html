@@ -1,0 +1,31 @@
+<html>
+<head>
+<style>
+body {text-align:center;}
+#page {width:70%; text-align:left; margin:10px auto 20px auto; background-color:#0c0c0c;}
+#sidebar {float:left; width:20%; border:1px solid black;}
+#content {float:left; width:79%; border:1px solid black;}
+
+</style>
+<title>{% block title %}My Base Template{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}assets/css/styles.css">
+</head>
+<body>
+<div id ="page">
+
+	<div id="sidebar">
+		{% block sidebar %}
+		<ul>
+		    <li><a href="/articles/all">Articles</a></li>
+		    <li><a href="/admin/">Admin</a></li>
+		</ul>
+		{% endblock %}
+	</div>
+	
+	<div id="content">
+	    {% block content %}This is the block content area{% endblock %}
+	    <img src="{{ STATIC_URL }}assets/img/py.jpeg">
+	</div>
+</div>
+</body>
+</html>

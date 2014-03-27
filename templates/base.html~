@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>{% block title %}My Base Template{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}assets/css/styles.css">
+</head>
+<body>
+<div id ="page">
+
+	<div id="sidebar">
+		{% block sidebar %}
+		<ul>
+		    <li><a href="/articles/all">Articles</a></li>
+		    <li><a href="/admin/">Admin</a></li>
+		</ul>
+		{% endblock %}
+	</div>
+	
+	<div id="content">
+	    {% block content %}This is the block content area{% endblock %}
+	    <img src="{{ STATIC_URL }}assets/img/py.jpeg">
+	</div>
+</div>
+</body>
+</html>
